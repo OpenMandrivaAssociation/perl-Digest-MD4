@@ -1,7 +1,7 @@
 %define module  Digest-MD4
 %define name	perl-%{module}
 %define version 1.5
-%define release %mkrel 2
+%define release %mkrel 3
 
 Name:		    %{name}
 Version:	    %{version}
