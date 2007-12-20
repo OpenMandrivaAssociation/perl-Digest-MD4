@@ -12,6 +12,7 @@ Group:		    Development/Perl
 Url:		    http://search.cpan.org/dist/%{module}/
 Source:		    http://www.cpan.org/modules/by-module/Digest/%{module}-%{version}.tar.bz2
 BuildRequires:	perl-devel
+BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description
 The Digest-MD4 module allows you to use the MD4 Message Digest algorithm from
