@@ -1,18 +1,19 @@
-%define module  Digest-MD4
-%define name	perl-%{module}
-%define version 1.5
-%define release %mkrel 7
+%define upstream_name    Digest-MD4
+%define upstream_version 1.5
 
-Name:		    %{name}
-Version:	    %{version}
-Release:	    %{release}
-Summary:	    Perl interface to the MD4 Algorithm
-License:	    GPL or Artistic
-Group:		    Development/Perl
-Url:		    http://search.cpan.org/dist/%{module}/
-Source:		    http://www.cpan.org/modules/by-module/Digest/%{module}-%{version}.tar.bz2
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
+Summary:	Perl interface to the MD4 Algorithm
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}/
+Source0:	http://www.cpan.org/modules/by-module/Digest/%{upstream_name}-%{upstream_version}.tar.bz2
+
 BuildRequires:	perl-devel
-BuildRoot:      %{_tmppath}/%{name}-%{version}
+
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 The Digest-MD4 module allows you to use the MD4 Message Digest algorithm from
@@ -21,14 +22,14 @@ length and produces as output a 128-bit "fingerprint" or "message digest" of
 the input.
 
 %prep
-%setup -q -n %{module}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
-%{__make} test
+%make test
 
 %install
 rm -rf %{buildroot}
@@ -43,4 +44,3 @@ rm -rf %{buildroot}
 %{perl_vendorarch}/Digest
 %{perl_vendorarch}/auto/Digest
 %{_mandir}/*/*
-
