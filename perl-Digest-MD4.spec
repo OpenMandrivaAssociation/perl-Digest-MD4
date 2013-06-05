@@ -2,14 +2,14 @@
 %define upstream_version 1.5
 
 Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:	4
+Version:    %perl_convert_version 1.9
+Release:	1
 
 Summary:	Perl interface to the MD4 Algorithm
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}/
-Source0:	http://www.cpan.org/modules/by-module/Digest/%{upstream_name}-%{upstream_version}.tar.bz2
+Source0:	http://www.cpan.org/modules/by-module/Digest/Digest-MD4-1.9.tar.gz
 
 BuildRequires:	perl-devel
 
@@ -94,4 +94,5 @@ rm -rf %{buildroot}
 
 * Wed Jul 13 2005 Oden Eriksson <oeriksson@mandriva.com> 1.4-1mdk
 - initial Mandriva package
+
 
