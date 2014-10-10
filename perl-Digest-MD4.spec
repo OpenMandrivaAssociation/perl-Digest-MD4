@@ -2,7 +2,7 @@
 %define upstream_version 1.9
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version 1.9
-Release:	1
+Release:	2
 
 Summary:	Perl interface to the MD4 Algorithm
 License:	GPL+ or Artistic
