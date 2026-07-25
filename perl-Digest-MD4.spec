@@ -1,14 +1,14 @@
 %define upstream_name    Digest-MD4
 %define upstream_version 1.9
 Name:       perl-%{upstream_name}
-Version:    %perl_convert_version 1.9
-Release:	3
+Version:    %{upstream_version}
+Release:	4
 
 Summary:	Perl interface to the MD4 Algorithm
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}/
-Source0:	http://www.cpan.org/modules/by-module/Digest/Digest-MD4-1.9.tar.gz
+Url:		https://metacpan.org/dist/Digest-MD4
+Source0:	https://cpan.metacpan.org/authors/id/M/MI/MIKEM/DigestMD4/Digest-MD4-1.9.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
