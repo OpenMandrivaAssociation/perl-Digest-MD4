@@ -1,8 +1,7 @@
 %define upstream_name    Digest-MD4
-%define upstream_version 1.9
 Name:       perl-%{upstream_name}
-Version:    %{upstream_version}
-Release:	4
+Version:    1.9
+Release:	5
 
 Summary:	Perl interface to the MD4 Algorithm
 License:	GPL+ or Artistic
@@ -22,7 +21,7 @@ length and produces as output a 128-bit "fingerprint" or "message digest" of
 the input.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -61,9 +60,7 @@ rm -rf %{buildroot}
 
 * Fri Feb 12 2010 Jérôme Quelin <jquelin@mandriva.org> 1.500.0-1mdv2010.1
 + Revision: 504812
-- rebuild using %%perl_convert_version
-
-* Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 1.5-7mdv2010.0
+- rebuild using %1.9 Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 1.5-7mdv2010.0
 + Revision: 430413
 - rebuild
 
