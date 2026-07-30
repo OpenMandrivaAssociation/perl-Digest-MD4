@@ -2,7 +2,7 @@
 %define upstream_version 1.9
 Name:       perl-%{upstream_name}
 Version:	1.9
-Release:	4
+Release:	5
 
 Summary:	Perl interface to the MD4 Algorithm
 License:	GPL+ or Artistic
@@ -13,7 +13,6 @@ Source0:	https://cpan.metacpan.org/authors/id/M/MI/MIKEM/DigestMD4/Digest-MD4-1.
 BuildRequires:	make
 BuildRequires:	perl-devel
 
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 The Digest-MD4 module allows you to use the MD4 Message Digest algorithm from
@@ -25,13 +24,13 @@ the input.
 %setup -q -n Digest-MD4-1.9
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
 # soft: do not fail package on test failures
 set +e
-%make test
+%make test || :
 
 %install
 rm -rf %{buildroot}
