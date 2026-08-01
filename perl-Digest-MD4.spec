@@ -2,7 +2,7 @@
 %define upstream_version 1.9
 Name:       perl-%{upstream_name}
 Version:	1.9
-Release:	5
+Release:	6
 
 Summary:	Perl interface to the MD4 Algorithm
 License:	GPL+ or Artistic
@@ -30,6 +30,7 @@ perl Makefile.PL INSTALLDIRS=vendor
 %check
 # soft: do not fail package on test failures
 set +e
+make test || :
 %make test || :
 
 %install
